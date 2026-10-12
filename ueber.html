@@ -3,19 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Über – Projektname</title>
+  <title>Über das Projekt – Pokédex</title>
+  <meta name="description" content="Wer den Pokédex gebaut hat, warum und woher die Pokémon-Daten stammen.">
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header>
     <nav aria-label="Hauptmenü">
-      <a href="index.html">Start</a>
-      <a href="ueber.html" aria-current="page">Über</a>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="suche.html">Suche</a></li>
+        <li><a href="pokedex.html">Pokédex</a></li>
+        <li><a href="ueber.html" aria-current="page">Über</a></li>
+      </ul>
     </nav>
   </header>
   <main>
     <h1>Über dieses Projekt</h1>
-    <p>Wer hat es gebaut, warum, und woher kommen die Daten?</p>
+    <p>Dieser Pokédex ist ein Projekt im Kurs Web-Engineering 1 an der DHBW Karlsruhe.</p>
+
+    <section aria-labelledby="team-titel">
+      <h2 id="team-titel">Wer hat es gebaut?</h2>
+      <p>Julian Rödger und Alex Dortmann aus dem Kurs TINF25B3.</p>
+    </section>
+
+    <section aria-labelledby="warum-titel">
+      <h2 id="warum-titel">Warum ein Pokédex?</h2>
+      <p>
+        Pokémon kennt fast jeder und mit über tausend Einträgen gibt es genug Daten zum Durchstöbern, Sortieren und Filtern.
+        Außerdem ist die Datenquelle frei zugänglich und gut dokumentiert, sodass wir uns auf den Aufbau der Seite konzentrieren können.
+      </p>
+    </section>
+
+    <section aria-labelledby="daten-titel">
+      <h2 id="daten-titel">Woher kommen die Daten?</h2>
+      <p>
+        Alle Informationen zu den Pokémon stammen von der <a href="https://pokeapi.co">PokeAPI</a>,
+        einer freien Schnittstelle, die man ohne Anmeldung oder API-Key nutzen kann.
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
+  </footer>
 </body>
 </html>

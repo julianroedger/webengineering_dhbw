@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alle Pokémon nach Nummer – Pokédex</title>
+  <meta name="description" content="Alle Pokémon auf einen Blick, aufsteigend nach Pokédex-Nummer sortiert.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Hauptmenü">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="suche.html">Suche</a></li>
+        <li><a href="pokedex.html" aria-current="page">Pokédex</a></li>
+        <li><a href="ueber.html">Über</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Pokédex</h1>
+    <p>
+      Hier findest du alle Pokémon aufsteigend sortiert. 
+      Du suchst ein bestimmtes? Dann nutze die <a href="suche.html">Suche</a>.
+    </p>
+
+    <section aria-labelledby="liste-titel">
+      <h2 id="liste-titel">Alle Pokémon</h2>
+      <p id="status" role="status"></p>
+
+      <!-- Ab Termin 6 erzeugt app.js hier pro Pokémon einen Eintrag,
+           sortiert nach Nummer (1, 2, 3 …), nach diesem Muster:
+        <li>
+          <article>
+            <h3>Name</h3>
+            <figure>
+              <img src="…" alt="…" width="96" height="96">
+              <figcaption>#Nummer</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>…</dd>
+              <dt>Generation</dt>
+              <dd>…</dd>
+            </dl>
+          </article>
+        </li>
+      -->
+      <ol id="pokemon-liste">
+        <!-- Beispiel-Eintrag, bis app.js die Liste füllt -->
+        <li>
+          <article>
+            <h3>Pikachu</h3>
+            <figure>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu, eine gelbe Maus mit roten Backen" width="96" height="96">
+              <figcaption>#025</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>Elektro</dd>
+              <dt>Generation</dt>
+              <dd>I</dd>
+            </dl>
+          </article>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
+    <p><small>Pokémon und alle zugehörigen Namen sind Marken von Nintendo, Game Freak und The Pokémon Company.</small></p>
+  </footer>
+</body>
+</html>

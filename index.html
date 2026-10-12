@@ -3,35 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projektname – kurze Beschreibung</title>
-  <meta name="description" content="Ein Satz, der erklärt, was diese Seite kann.">
+  <title>Pokédex – Pokémon entdecken und suchen</title>
+  <meta name="description" content="Ein Pokédex für alle Pokémon: durchstöbere die komplette Liste oder suche gezielt nach Name, Typ und Generation.">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pokédex",
+    "url": "https://julianroedger.github.io/webengineering_dhbw/",
+    "description": "Ein Pokédex für alle Pokémon: durchstöbere die komplette Liste oder suche gezielt nach Name, Typ und Generation.",
+    "inLanguage": "de",
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": "https://julianroedger.github.io/webengineering_dhbw/suche.html?name={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ViewAction",
+        "name": "Alle Pokémon ansehen",
+        "target": "https://julianroedger.github.io/webengineering_dhbw/pokedex.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
     <nav aria-label="Hauptmenü">
-      <a href="index.html">Start</a>
-      <a href="ueber.html">Über</a>
+      <ul>
+        <li><a href="index.html" aria-current="page">Start</a></li>
+        <li><a href="suche.html">Suche</a></li>
+        <li><a href="pokedex.html">Pokédex</a></li>
+        <li><a href="ueber.html">Über</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Projektname</h1>
-    <p>Ein Satz dazu, was hier passiert.</p>
+    <h1>Hallo Trainer, willkommen im Pokédex</h1>
+    <p>
+      Hier findest du alle Pokémon an einem Ort – von Bisasam bis zu den neuesten Entdeckungen. 
+      Stöbere durch die komplette Liste oder such gezielt nach deinem Lieblings-Pokémon.
+    </p>
 
-    <!-- Ab Termin 2: euer Formular
-    <form>
-      <label for="suche">Suche</label>
-      <input id="suche" name="suche" type="text" required minlength="3">
-      <button type="submit">Los</button>
-    </form>
-    -->
+    <section aria-labelledby="angebot-titel">
+      <h2 id="angebot-titel">Was du hier machen kannst</h2>
 
-    <!-- Ab Termin 6: hier landen die Daten
-    <p id="status" role="status"></p>
-    <ul id="ergebnisse"></ul>
-    -->
+      <article>
+        <h3><a href="pokedex.html">Alle Pokémon ansehen</a></h3>
+        <p>Die komplette Liste, aufsteigend nach Pokédex-Nummer sortiert. Zu jedem Pokémon siehst du Bild, Typ und Generation.</p>
+      </article>
+
+      <article>
+        <h3><a href="suche.html">Gezielt suchen</a></h3>
+        <p>Du kennst den Namen oder die Nummer? Oder suchst alle Pokémon eines Typs oder einer Generation? Dann nutze die Suche mit Filtern.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="daten-titel">
+      <h2 id="daten-titel">Woher die Daten kommen</h2>
+      <p>Alle Informationen stammen von der freien <a href="https://pokeapi.co">PokeAPI</a>. Mehr zum Projekt erfährst du auf der Seite <a href="ueber.html">Über</a>.</p>
+    </section>
   </main>
 
   <footer>
