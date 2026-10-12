@@ -1,0 +1,18 @@
+# Pokédex
+
+> Ein Pokédex als Webseite: alle Pokémon auf einen Blick, sortiert nach Pokédex-Nummer 
+und eine Suche nach Name, Nummer, Typ und Generation. Studienprojekt im Kurs Web-Engineering 
+1 an der DHBW Karlsruhe (TINF25B3) von Julian Rödger und Alex Dortmann.
+
+Die Daten stammen von der freien PokeAPI (https://pokeapi.co). Die Seite ist auf Deutsch.
+
+## Seiten
+
+- [Start](https://julianroedger.github.io/webengineering_dhbw/): Überblick, was man auf der Seite machen kann
+- [Suche](https://julianroedger.github.io/webengineering_dhbw/suche.html): Pokémon nach Name, Nummer, Typ und Generation suchen
+- [Pokédex](https://julianroedger.github.io/webengineering_dhbw/pokedex.html): alle Pokémon, aufsteigend nach Nummer sortiert
+- [Über](https://julianroedger.github.io/webengineering_dhbw/ueber.html): wer das Projekt gebaut hat und woher die Daten kommen
+
+## Optional
+
+- [PokeAPI-Dokumentation](https://pokeapi.co/docs/v2): Quelle aller Pokémon-Daten
