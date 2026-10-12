@@ -38,13 +38,18 @@ npx serve .
 
 Womit gebaut und warum. Eine Zeile pro Entscheidung reicht, aber es soll eine Entscheidung sein, keine Aufzählung von Buzzwords.
 
+## Rich Result Test 
+
+![Rich Result Test](rich_result_test.png)
+
 ## KI-Log
 
 Ehrlich ausfüllen, das zählt zur Bewertung.
 
 | Werkzeug | Wofür benutzt |
 | --- | --- |
-| Claude | Ideenfindung |
+| Claude (Chat) | Ideenfindung |
+| Claude | Überblick und Korrekturvorschläge der HTML-Semantik |
 
 **Ein Fall, in dem KI geholfen hat:** Was habt ihr gefragt, was kam zurück, was habt ihr geändert?
 
