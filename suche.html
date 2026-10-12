@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suche – Pokédex</title>
+  <meta name="description" content="Finde Pokémon gezielt nach Name, Nummer, Typ und Generation.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Hauptmenü">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="suche.html" aria-current="page">Suche</a></li>
+        <li><a href="pokedex.html">Pokédex</a></li>
+        <li><a href="ueber.html">Über</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Pokémon suchen</h1>
+    <p>Gib einen Namen oder eine Nummer ein und grenze das Ergebnis mit den Filtern ein.</p>
+
+    <section aria-labelledby="formular-titel">
+      <h2 id="formular-titel">Suchkriterien</h2>
+      <form role="search" action="suche.html" method="get">
+        <p>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="search" required minlength="3" placeholder="z. B. Glumanda" autocomplete="off">
+        </p>
+        <p>
+          <label for="nummer">Nummer</label>
+          <input id="nummer" name="nummer" type="number" min="1" max="1025" placeholder="z. B. 4">
+        </p>
+        <p>
+          <label for="mail">E-Mail</label>
+          <input id="mail" name="mail" type="email" placeholder="du@example.de" autocomplete="email">
+          <small>Optional: Wir benachrichtigen dich, wenn neue Pokémon dazukommen.</small>
+        </p>
+
+        <fieldset>
+          <legend>Filter</legend>
+          <p>
+            <label for="typ">Typ</label>
+            <select id="typ" name="typ">
+              <option value="">Alle Typen</option>
+              <option value="normal">Normal</option>
+              <option value="feuer">Feuer</option>
+              <option value="wasser">Wasser</option>
+              <option value="pflanze">Pflanze</option>
+              <option value="elektro">Elektro</option>
+              <option value="eis">Eis</option>
+              <option value="kampf">Kampf</option>
+              <option value="gift">Gift</option>
+              <option value="boden">Boden</option>
+              <option value="flug">Flug</option>
+              <option value="psycho">Psycho</option>
+              <option value="kaefer">Käfer</option>
+              <option value="gestein">Gestein</option>
+              <option value="geist">Geist</option>
+              <option value="drache">Drache</option>
+              <option value="unlicht">Unlicht</option>
+              <option value="stahl">Stahl</option>
+              <option value="fee">Fee</option>
+            </select>
+          </p>
+          <p>
+            <label for="generation">Generation</label>
+            <select id="generation" name="generation">
+              <option value="">Alle Generationen</option>
+              <option value="1">Generation I</option>
+              <option value="2">Generation II</option>
+              <option value="3">Generation III</option>
+              <option value="4">Generation IV</option>
+              <option value="5">Generation V</option>
+              <option value="6">Generation VI</option>
+              <option value="7">Generation VII</option>
+              <option value="8">Generation VIII</option>
+              <option value="9">Generation IX</option>
+            </select>
+          </p>
+        </fieldset>
+
+        <button type="submit">Suchen</button>
+        <button type="reset">Zurücksetzen</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="ergebnisse-titel">
+      <h2 id="ergebnisse-titel">Ergebnisse</h2>
+      <p id="status" role="status"></p>
+
+      <!-- Ab Termin 6 erzeugt app.js hier pro Treffer einen Eintrag nach diesem Muster:
+        <li>
+          <article>
+            <h3>Name</h3>
+            <figure>
+              <img src="…" alt="…" width="96" height="96">
+              <figcaption>#Nummer</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>…</dd>
+              <dt>Generation</dt>
+              <dd>…</dd>
+            </dl>
+          </article>
+        </li>
+      -->
+      <ul id="ergebnisse"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
+    <p><small>Pokémon und alle zugehörigen Namen sind Marken von Nintendo, Game Freak und The Pokémon Company.</small></p>
+  </footer>
+</body>
+</html>
