@@ -42,6 +42,12 @@ Womit gebaut und warum. Eine Zeile pro Entscheidung reicht, aber es soll eine En
 
 ![Rich Result Test](rich_result_test.png)
 
+## CSS-Kollision (Übungsblatt 3, A5)
+
+- **Regeln:** `nav a { text-decoration: none }` und `nav a[aria-current="page"] { text-decoration: underline }` treffen beide den Link der aktuellen Seite.
+- **Gewinner:** `nav a[aria-current="page"]`, der Link ist unterstrichen. In den DevTools ist `text-decoration: none` durchgestrichen.
+- **Warum:** Spezifität (0,1,2) gegen (0,0,2). Der Attribut-Selektor zählt wie eine Klasse, die Reihenfolge im Stylesheet spielt keine Rolle.
+
 ## KI-Log
 
 Ehrlich ausfüllen, das zählt zur Bewertung.

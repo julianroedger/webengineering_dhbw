@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 /* Variablen */
 :root {
   --bg: #ffffff;
@@ -24,7 +26,8 @@
 }
 
 /* Allgemein */
-* { box-sizing: border-box; }
+/* Fokus nicht hinter dem Sticky Header (8rem = Header mit zweizeiliger Nav) */
+html { scroll-padding-top: 8rem; }
 
 body {
   margin: 0;
