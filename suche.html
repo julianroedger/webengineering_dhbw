@@ -6,46 +6,46 @@
   <title>Suche – Pokédex</title>
   <meta name="description" content="Finde Pokémon gezielt nach Name, Nummer, Typ und Generation.">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script type="module" src="app.js"></script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Hauptmenü">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="suche.html" aria-current="page">Suche</a></li>
-        <li><a href="pokedex.html">Pokédex</a></li>
-        <li><a href="ueber.html">Über</a></li>
+  <header class="sticky top-0 z-10 border-b-4 border-schrift bg-hintergrund">
+    <nav class="bg-flaeche p-4" aria-label="Hauptmenü">
+      <ul class="m-0 flex list-none flex-wrap gap-4 p-0">
+        <li><a class="nav-link" href="index.html">Start</a></li>
+        <li><a class="nav-link" href="suche.html" aria-current="page">Suche</a></li>
+        <li><a class="nav-link" href="pokedex.html">Pokédex</a></li>
+        <li><a class="nav-link" href="ueber.html">Über</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="mx-auto max-w-6xl p-4">
     <h1>Pokémon suchen</h1>
     <p>Gib einen Namen oder eine Nummer ein und grenze das Ergebnis mit den Filtern ein.</p>
 
     <section aria-labelledby="formular-titel">
       <h2 id="formular-titel">Suchkriterien</h2>
-      <form role="search" action="suche.html" method="get">
+      <form class="karte max-w-prose" role="search" action="suche.html" method="get">
         <p>
           <label for="name">Name</label>
-          <input id="name" name="name" type="search" required minlength="3" placeholder="z. B. Glumanda" autocomplete="off">
+          <input class="eingabe" id="name" name="name" type="search" required minlength="3" placeholder="z. B. Glumanda" autocomplete="off">
         </p>
         <p>
           <label for="nummer">Nummer</label>
-          <input id="nummer" name="nummer" type="number" min="1" max="1025" placeholder="z. B. 4">
+          <input class="eingabe" id="nummer" name="nummer" type="number" min="1" max="1025" placeholder="z. B. 4">
         </p>
         <p>
           <label for="mail">E-Mail</label>
-          <input id="mail" name="mail" type="email" placeholder="du@example.de" autocomplete="email">
+          <input class="eingabe" id="mail" name="mail" type="email" placeholder="du@example.de" autocomplete="email">
           <small>Optional: Wir benachrichtigen dich, wenn neue Pokémon dazukommen.</small>
         </p>
 
-        <fieldset>
-          <legend>Filter</legend>
-          <p>
+        <fieldset class="mb-4 flex flex-wrap gap-4 rounded-xl border-2 border-leise p-4">
+          <legend class="px-2 font-bold">Filter</legend>
+          <p class="m-0 flex-[1_1_12rem]">
             <label for="typ">Typ</label>
-            <select id="typ" name="typ">
+            <select class="eingabe pr-10" id="typ" name="typ">
               <option value="">Alle Typen</option>
               <option value="normal">Normal</option>
               <option value="feuer">Feuer</option>
@@ -67,9 +67,9 @@
               <option value="fee">Fee</option>
             </select>
           </p>
-          <p>
+          <p class="m-0 flex-[1_1_12rem]">
             <label for="generation">Generation</label>
-            <select id="generation" name="generation">
+            <select class="eingabe pr-10" id="generation" name="generation">
               <option value="">Alle Generationen</option>
               <option value="1">Generation I</option>
               <option value="2">Generation II</option>
@@ -84,8 +84,10 @@
           </p>
         </fieldset>
 
-        <button type="submit">Suchen</button>
-        <button type="reset">Zurücksetzen</button>
+        <p class="m-0 flex flex-wrap gap-4">
+          <button class="btn btn-primaer" type="submit">Suchen</button>
+          <button class="btn btn-sekundaer" type="reset">Zurücksetzen</button>
+        </p>
       </form>
     </section>
 
@@ -95,7 +97,7 @@
 
       <!-- Ab Termin 6 erzeugt app.js hier pro Treffer einen Eintrag nach diesem Muster:
         <li>
-          <article>
+          <article class="karte">
             <h3>Name</h3>
             <figure>
               <img src="…" alt="…" width="96" height="96">
@@ -110,11 +112,11 @@
           </article>
         </li>
       -->
-      <ul id="ergebnisse"></ul>
+      <ul id="ergebnisse" class="raster"></ul>
     </section>
   </main>
 
-  <footer>
+  <footer class="p-4 text-klein text-leise">
     <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
     <p><small>Pokémon und alle zugehörigen Namen sind Marken von Nintendo, Game Freak und The Pokémon Company.</small></p>
   </footer>

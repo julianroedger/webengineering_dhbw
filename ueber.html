@@ -6,20 +6,20 @@
   <title>Über das Projekt – Pokédex</title>
   <meta name="description" content="Wer den Pokédex gebaut hat, warum und woher die Pokémon-Daten stammen.">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script type="module" src="app.js"></script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Hauptmenü">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="suche.html">Suche</a></li>
-        <li><a href="pokedex.html">Pokédex</a></li>
-        <li><a href="ueber.html" aria-current="page">Über</a></li>
+  <header class="sticky top-0 z-10 border-b-4 border-schrift bg-hintergrund">
+    <nav class="bg-flaeche p-4" aria-label="Hauptmenü">
+      <ul class="m-0 flex list-none flex-wrap gap-4 p-0">
+        <li><a class="nav-link" href="index.html">Start</a></li>
+        <li><a class="nav-link" href="suche.html">Suche</a></li>
+        <li><a class="nav-link" href="pokedex.html">Pokédex</a></li>
+        <li><a class="nav-link" href="ueber.html" aria-current="page">Über</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="mx-auto max-w-6xl p-4">
     <h1>Über dieses Projekt</h1>
     <p>Dieser Pokédex ist ein Projekt im Kurs Web-Engineering 1 an der DHBW Karlsruhe.</p>
 
@@ -45,7 +45,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="p-4 text-klein text-leise">
     <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
   </footer>
 </body>

@@ -6,7 +6,7 @@
   <title>Pokédex – Pokémon entdecken und suchen</title>
   <meta name="description" content="Ein Pokédex für alle Pokémon: durchstöbere die komplette Liste oder suche gezielt nach Name, Typ und Generation.">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script type="module" src="app.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,18 +31,18 @@
   </script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Hauptmenü">
-      <ul>
-        <li><a href="index.html" aria-current="page">Start</a></li>
-        <li><a href="suche.html">Suche</a></li>
-        <li><a href="pokedex.html">Pokédex</a></li>
-        <li><a href="ueber.html">Über</a></li>
+  <header class="sticky top-0 z-10 border-b-4 border-schrift bg-hintergrund">
+    <nav class="bg-flaeche p-4" aria-label="Hauptmenü">
+      <ul class="m-0 flex list-none flex-wrap gap-4 p-0">
+        <li><a class="nav-link" href="index.html" aria-current="page">Start</a></li>
+        <li><a class="nav-link" href="suche.html">Suche</a></li>
+        <li><a class="nav-link" href="pokedex.html">Pokédex</a></li>
+        <li><a class="nav-link" href="ueber.html">Über</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="mx-auto max-w-6xl p-4">
     <h1>Hallo Trainer, willkommen im Pokédex</h1>
     <p>
       Hier findest du alle Pokémon an einem Ort – von Bisasam bis zu den neuesten Entdeckungen. 
@@ -52,15 +52,17 @@
     <section aria-labelledby="angebot-titel">
       <h2 id="angebot-titel">Was du hier machen kannst</h2>
 
-      <article>
-        <h3><a href="pokedex.html">Alle Pokémon ansehen</a></h3>
-        <p>Die komplette Liste, aufsteigend nach Pokédex-Nummer sortiert. Zu jedem Pokémon siehst du Bild, Typ und Generation.</p>
-      </article>
+      <div class="raster">
+        <article class="karte">
+          <h3><a href="pokedex.html">Alle Pokémon ansehen</a></h3>
+          <p>Die komplette Liste, aufsteigend nach Pokédex-Nummer sortiert. Zu jedem Pokémon siehst du Bild, Typ und Generation.</p>
+        </article>
 
-      <article>
-        <h3><a href="suche.html">Gezielt suchen</a></h3>
-        <p>Du kennst den Namen oder die Nummer? Oder suchst alle Pokémon eines Typs oder einer Generation? Dann nutze die Suche mit Filtern.</p>
-      </article>
+        <article class="karte">
+          <h3><a href="suche.html">Gezielt suchen</a></h3>
+          <p>Du kennst den Namen oder die Nummer? Oder suchst alle Pokémon eines Typs oder einer Generation? Dann nutze die Suche mit Filtern.</p>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="daten-titel">
@@ -69,7 +71,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="p-4 text-klein text-leise">
     <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
   </footer>
 </body>

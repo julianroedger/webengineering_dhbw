@@ -6,21 +6,21 @@
   <title>Alle Pokémon nach Nummer – Pokédex</title>
   <meta name="description" content="Alle Pokémon auf einen Blick, aufsteigend nach Pokédex-Nummer sortiert.">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script type="module" src="app.js"></script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Hauptmenü">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="suche.html">Suche</a></li>
-        <li><a href="pokedex.html" aria-current="page">Pokédex</a></li>
-        <li><a href="ueber.html">Über</a></li>
+  <header class="sticky top-0 z-10 border-b-4 border-schrift bg-hintergrund">
+    <nav class="bg-flaeche p-4" aria-label="Hauptmenü">
+      <ul class="m-0 flex list-none flex-wrap gap-4 p-0">
+        <li><a class="nav-link" href="index.html">Start</a></li>
+        <li><a class="nav-link" href="suche.html">Suche</a></li>
+        <li><a class="nav-link" href="pokedex.html" aria-current="page">Pokédex</a></li>
+        <li><a class="nav-link" href="ueber.html">Über</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="mx-auto max-w-6xl p-4">
     <h1>Pokédex</h1>
     <p>
       Hier findest du alle Pokémon aufsteigend sortiert. 
@@ -34,7 +34,7 @@
       <!-- Ab Termin 6 erzeugt app.js hier pro Pokémon einen Eintrag,
            sortiert nach Nummer (1, 2, 3 …), nach diesem Muster:
         <li>
-          <article>
+          <article class="karte">
             <h3>Name</h3>
             <figure>
               <img src="…" alt="…" width="96" height="96">
@@ -49,10 +49,55 @@
           </article>
         </li>
       -->
-      <ol id="pokemon-liste">
-        <!-- Beispiel-Eintrag, bis app.js die Liste füllt -->
+      <ol id="pokemon-liste" class="raster">
+        <!-- Beispiel-Einträge, bis app.js die Liste füllt -->
         <li>
-          <article>
+          <article class="karte">
+            <h3>Bisasam</h3>
+            <figure>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bisasam, ein grüner Vierbeiner mit Pflanzenknolle auf dem Rücken" width="96" height="96">
+              <figcaption>#001</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>Pflanze, Gift</dd>
+              <dt>Generation</dt>
+              <dd>I</dd>
+            </dl>
+          </article>
+        </li>
+        <li>
+          <article class="karte">
+            <h3>Glumanda</h3>
+            <figure>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Glumanda, eine orange Echse mit brennender Schwanzspitze" width="96" height="96">
+              <figcaption>#004</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>Feuer</dd>
+              <dt>Generation</dt>
+              <dd>I</dd>
+            </dl>
+          </article>
+        </li>
+        <li>
+          <article class="karte">
+            <h3>Schiggy</h3>
+            <figure>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Schiggy, eine blaue Schildkröte" width="96" height="96">
+              <figcaption>#007</figcaption>
+            </figure>
+            <dl>
+              <dt>Typ</dt>
+              <dd>Wasser</dd>
+              <dt>Generation</dt>
+              <dd>I</dd>
+            </dl>
+          </article>
+        </li>
+        <li>
+          <article class="karte">
             <h3>Pikachu</h3>
             <figure>
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu, eine gelbe Maus mit roten Backen" width="96" height="96">
@@ -70,7 +115,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="p-4 text-klein text-leise">
     <p>Web-Engineering 1 · DHBW Karlsruhe · <span id="jahr"></span></p>
     <p><small>Pokémon und alle zugehörigen Namen sind Marken von Nintendo, Game Freak und The Pokémon Company.</small></p>
   </footer>

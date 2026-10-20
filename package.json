@@ -1,0 +1,21 @@
+{
+  "name": "webengineering_dhbw",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wir erstellen einen Pokédex mit einer öffentlichen API.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianroedger/webengineering_dhbw.git"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4"
+  }
+}
