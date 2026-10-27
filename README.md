@@ -83,9 +83,17 @@ Ehrlich ausfüllen, das zählt zur Bewertung.
 
 | Werkzeug | Wofür benutzt |
 | --- | --- |
-| Claude (Chat) | Ideenfindung |
-| Claude | Überblick und Korrekturvorschläge der HTML-Semantik |
+| Claude (Chat) | Blatt 1: Ideenfindung |
+| Copilot / Claude | Blatt 2: Überblick und Korrekturvorschläge der HTML-Semantik, die dann selbst überprüft und eingebaut wurde |
+| Claude | Blatt 3: Hilfe bei der Findung eines Farbschemas als auch dem Dark Mode |
+| Claude | Blatt 4: Hilfe beim Tailwind-Setup und Prüfung der Pakete + anschließende Kontrolle / eigene Überprüfung |
 
-**Ein Fall, in dem KI geholfen hat:** Was habt ihr gefragt, was kam zurück, was habt ihr geändert?
+**Fälle, in denen KI geholfen hat:**
 
-**Ein Fall, in dem KI falsch lag:** Woran habt ihr es gemerkt, wie habt ihr es gelöst?
+1. **Blatt 2, HTML-Semantik:** Auf die Frage, wo in unseren Pokémon-Karten ein spezifischeres Element passt, kamen `article` für die Karte, `figure`/`figcaption` für Bild und Nummer und `dl` für Typ und Generation. Wir haben es dann nach diesen Vorschlägen eingebaut und fanden diese passend.
+
+2. **Blatt 3, Farbschema und Dark Mode:** Wir bekamen das Pokédex-Rot `#c8102e` als Akzent und den Hinweis, für den Dark Mode nur die Variablen unter `prefers-color-scheme: dark` zu überschreiben. Ein helleres Rot (`#ff5c6c`) sorgt dort für genug Kontrast, was wir dann in den Dev-Tools geprüft haben.
+
+**Ein Fall, in dem KI falsch lag:** 
+
+1. **Blatt 2, HTML-Semantik:** Wir haben ausdrücklich geschrieben, dass der Code nicht umgeschrieben werden soll, es kam aber beim Semantik-Check ein komplett neuer Code für die Seite zurück, teils wieder mit `div`-Containern und CSS-Klassen. Haben wir dann selbst wieder geändert und mal per Browser Suche nach Möglichkeiten gesucht, wie man das am besten lösen kann.
