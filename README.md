@@ -1,9 +1,16 @@
 # Pokédex
 
-Wir erstellen einen Pokédex mit einer öffentlichen API.
+Ein Pokédex im Browser: Pokémon ansehen, suchen und filtern.
 
-**Live:** https://github.com/julianroedger/webengineering_dhbw.git
+- Zeigt die ersten 151 Pokémon als Karten, sortiert nach Pokédex-Nummer, die man auch per Suche mit Filtern finden kann
+- Jede Karte zeigt Bild, Name, Nummer, Typ und Generation
+- Daten kommen von der freien PokeAPI, ein API-Key ist nicht nötig
+
+**Live:** https://julianroedger.github.io/webengineering_dhbw/
 **Team:** Julian Rödger, Alex Dortmann
+
+Screenshot vom Pokedex:
+![Pokédex-Seite](pokedex_screenshot.png)
 
 ## Ausgeschiedene Ideen
 
@@ -14,17 +21,15 @@ Wir erstellen einen Pokédex mit einer öffentlichen API.
 |Film-Watchlist (TMDB)|Filme suchen und eine eigene Merkliste anlegen.|Benötigt einen API-Key und Speicherlogik für die Merkliste -> viel höhere Komplexität.|
 |Abfahrtsmonitor KA (KVV/EFA)|Abfahrten an Karlsruher Haltestellen, filterbar nach Linie.|Komplizierte (Wegen Live-Daten), schlecht dokumentierte API.|
 
-
-## Was die App kann
-
-- Anzeige der ersten 151 Pokémon
-- Suche und Filter nach bspw. Typ, Attacken, Name
-
 ## Datenquelle
 
-https://pokeapi.co
+[PokeAPI](https://pokeapi.co): freie REST-API, kein API-Key nötig ([Doku](https://pokeapi.co/docs/v2)).
 
-Welche API, welche Felder, wie oft aktualisiert? Link zur Doku.
+| Endpunkt | Wofür | Felder |
+| --- | --- | --- |
+| `/api/v2/pokemon?limit=151` | Liste der ersten 151 Pokémon | `name`, `url` |
+| `/api/v2/pokemon/{id}` | Details zu einem Pokémon | `id`, `types`, `sprites.front_default` |
+| `/api/v2/pokemon-species/{id}` | deutscher Name und Generation | `names` (Sprache `de`), `generation` |
 
 ## Lokal starten
 
@@ -77,6 +82,16 @@ Davon sind rund 3,7 kB Preflight (Tailwinds Reset), 1,7 kB eigene Grundregeln, 2
 
 **Warum so klein, obwohl Tailwind tausende Klassen kennt:** Tailwind enthält keine fertige CSS-Datei mit allen Klassen. Beim Build durchsucht es die Quelldateien (bei uns per `@source` nur `*.html` und `app.js`) und erzeugt nur die Klassen, die dort tatsächlich vorkommen. Ungenutzte Theme-Variablen werden weggelassen, die Farbpalette ist mit `--color-*: initial` auf unsere fünf Farben beschränkt, und Vite minifiziert das Ergebnis. Das Play CDN muss dagegen den ganzen Compiler mitliefern und die Klassen bei jedem Seitenaufruf im Browser erzeugen.
 
+## Lokal und live (Übungsblatt 5, A3)
+
+1. **Caching:** Lokal ist jede Änderung sofort sichtbar, live erscheint nach einem Deploy manchmal noch die alte Version. Grund: Vite schickt `Cache-Control: no-cache`, GitHub Pages dagegen `Cache-Control: max-age=600`, der Browser darf die Dateien also 10 Minuten wiederverwenden. Abhilfe: hartes Neuladen (`Cmd/Strg + Shift + R`).
+2. **Groß-/Kleinschreibung:** `POKEDEX.html` funktioniert lokal, live gibt es einen `404`. macOS unterscheidet nicht zwischen groß und klein, GitHub Pages schon.
+3. **Andere Dateien:** Lokal lädt der Browser `style.css` (11,8 kB, nicht minifiziert), `app.js` und zusätzlich `@vite/client` (ca. 220 kB, für das automatische Neuladen). Live sind es nur die gebauten Dateien aus `/webengineering_dhbw/assets/` (CSS 9,5 kB, JS 0,8 kB, mit Hash im Namen). 
+
+## Eigener Server oder GitHub Pages? (Übungsblatt 5, B)
+
+GitHub Pages reicht, solange die Seite nur aus fertigen Dateien besteht und der Browser öffentliche APIs wie die PokeAPI selbst aufruft. Einen eigenen Server braucht man, sobald man etwas geheim halten möchte, wie ein API-Key, oder eine Datenbank braucht.
+
 ## KI-Log
 
 Ehrlich ausfüllen, das zählt zur Bewertung.
@@ -87,12 +102,15 @@ Ehrlich ausfüllen, das zählt zur Bewertung.
 | Copilot / Claude | Blatt 2: Überblick und Korrekturvorschläge der HTML-Semantik, die dann selbst überprüft und eingebaut wurde |
 | Claude | Blatt 3: Hilfe bei der Findung eines Farbschemas als auch dem Dark Mode |
 | Claude | Blatt 4: Hilfe beim Tailwind-Setup und Prüfung der Pakete + anschließende Kontrolle / eigene Überprüfung |
+| Claude | Blatt 5: Hilfe bei den Verständnisfragen als Recherchehilfe und um Fragen zu beantworten. Hilfe beim Schaffen eines Überblicks und mit unserer API |
 
 **Fälle, in denen KI geholfen hat:**
 
 1. **Blatt 2, HTML-Semantik:** Auf die Frage, wo in unseren Pokémon-Karten ein spezifischeres Element passt, kamen `article` für die Karte, `figure`/`figcaption` für Bild und Nummer und `dl` für Typ und Generation. Wir haben es dann nach diesen Vorschlägen eingebaut und fanden diese passend.
 
 2. **Blatt 3, Farbschema und Dark Mode:** Wir bekamen das Pokédex-Rot `#c8102e` als Akzent und den Hinweis, für den Dark Mode nur die Variablen unter `prefers-color-scheme: dark` zu überschreiben. Ein helleres Rot (`#ff5c6c`) sorgt dort für genug Kontrast, was wir dann in den Dev-Tools geprüft haben.
+
+3. **Blatt 5, Überblick und Hilfe bei A5:** Wir haben den Agenten gefragt, ob er uns einen ersten Überblick über das Projekt geben kann, und ob irgendetwas, was wir machen sollten fehlt (sehr gut, wenn man wieder schnell ins Projekt einsteigen möchte). Zusätzlich haben wir noch direkt nach API-Keys gefragt, die **nicht** drinne sein sollten, damit man sich die Suche etwas leichter macht.
 
 **Ein Fall, in dem KI falsch lag:** 
 
