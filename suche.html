@@ -22,18 +22,18 @@
 
   <main class="mx-auto max-w-6xl p-4">
     <h1>Pokémon suchen</h1>
-    <p>Gib einen Namen oder eine Nummer ein und grenze das Ergebnis mit den Filtern ein.</p>
+    <p>Gib einen Namen oder eine Nummer ein und grenze das Ergebnis mit den Filtern ein. Treffer kannst du dir auf deiner Merkliste speichern.</p>
 
     <section aria-labelledby="formular-titel">
       <h2 id="formular-titel">Suchkriterien</h2>
-      <form class="karte max-w-prose" role="search" action="suche.html" method="get">
+      <form id="suchformular" class="karte max-w-prose" role="search" action="suche.html" method="get">
         <p>
           <label for="name">Name</label>
-          <input class="eingabe" id="name" name="name" type="search" required minlength="3" placeholder="z. B. Glumanda" autocomplete="off">
+          <input class="eingabe" id="name" name="name" type="search" minlength="3" placeholder="z. B. Glumanda" autocomplete="off">
         </p>
         <p>
           <label for="nummer">Nummer</label>
-          <input class="eingabe" id="nummer" name="nummer" type="number" min="1" max="1025" placeholder="z. B. 4">
+          <input class="eingabe" id="nummer" name="nummer" type="number" min="1" max="151" placeholder="z. B. 4">
         </p>
         <p>
           <label for="mail">E-Mail</label>
@@ -95,24 +95,15 @@
       <h2 id="ergebnisse-titel">Ergebnisse</h2>
       <p id="status" role="status"></p>
 
-      <!-- Ab Termin 6 erzeugt app.js hier pro Treffer einen Eintrag nach diesem Muster:
-        <li>
-          <article class="karte">
-            <h3>Name</h3>
-            <figure>
-              <img src="…" alt="…" width="96" height="96">
-              <figcaption>#Nummer</figcaption>
-            </figure>
-            <dl>
-              <dt>Typ</dt>
-              <dd>…</dd>
-              <dt>Generation</dt>
-              <dd>…</dd>
-            </dl>
-          </article>
-        </li>
-      -->
+      <!-- app.js erzeugt hier pro Treffer eine Karte (article.karte mit h3, figure, dl und Merken-Knopf) -->
       <ul id="ergebnisse" class="raster"></ul>
+    </section>
+
+    <section aria-labelledby="merkliste-titel">
+      <h2 id="merkliste-titel">Meine Merkliste</h2>
+      <p id="merk-zaehler" role="status">Noch keine Pokémon gemerkt.</p>
+      <ol id="merkliste" class="raster"></ol>
+      <p><button id="merkliste-leeren" class="btn btn-sekundaer" type="button" hidden>Merkliste leeren</button></p>
     </section>
   </main>
 

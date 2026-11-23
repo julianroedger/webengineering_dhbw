@@ -4,6 +4,7 @@ Ein Pokédex im Browser: Pokémon ansehen, suchen und filtern.
 
 - Zeigt die ersten 151 Pokémon als Karten, sortiert nach Pokédex-Nummer, die man auch per Suche mit Filtern finden kann
 - Jede Karte zeigt Bild, Name, Nummer, Typ und Generation
+- Treffer der Suche lassen sich auf einer Merkliste speichern, die auch nach dem Neuladen erhalten bleibt
 - Daten kommen von der freien PokeAPI, ein API-Key ist nicht nötig
 
 **Live:** https://julianroedger.github.io/webengineering_dhbw/
@@ -103,6 +104,7 @@ Ehrlich ausfüllen, das zählt zur Bewertung.
 | Claude | Blatt 3: Hilfe bei der Findung eines Farbschemas als auch dem Dark Mode |
 | Claude | Blatt 4: Hilfe beim Tailwind-Setup und Prüfung der Pakete + anschließende Kontrolle / eigene Überprüfung |
 | Claude | Blatt 5: Hilfe bei den Verständnisfragen als Recherchehilfe und um Fragen zu beantworten. Hilfe beim Schaffen eines Überblicks und mit unserer API |
+| Claude Code | Blatt 6: Suche ohne Reload, Merkliste mit Zustand und `render()`, `localStorage` |
 
 **Fälle, in denen KI geholfen hat:**
 
